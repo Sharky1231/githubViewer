@@ -29,12 +29,16 @@ export class UserReposComponent implements OnInit {
     if (this.user.userName) {
       this.errorMessage = '';
 
-      this.gitApi.getUserRepo(this.user.userName, this.currentPage, this.repoPageLimit).subscribe((reposResult: any) => {
+     this.fetchRepos().subscribe((reposResult: any) => {
         this.onRepoLoadSucess(reposResult);
       }, (error) => {
         this.onRepoLoadFail();
       });
     }
+  }
+
+  fetchRepos() {
+    return this.gitApi.getUserRepo(this.user.userName, this.currentPage, this.repoPageLimit);
   }
 
   private onRepoLoadSucess(reposResult: any) {

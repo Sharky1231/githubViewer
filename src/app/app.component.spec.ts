@@ -23,7 +23,7 @@ describe('AppComponent', () => {
     }).compileComponents();
   }));
 
-  it('should retrieve user "Angualar"', (done) => {
+  it('should retrieve user "Agualar"', (done) => {
     service = TestBed.get(GithubApiConnectorService);
     const app = new AppComponent(service);
 
