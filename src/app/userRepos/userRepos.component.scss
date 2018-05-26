@@ -1,0 +1,16 @@
+.table-responsive {
+  height: 400px;
+  overflow-y: scroll;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.description {
+  max-width: 250px;
+}

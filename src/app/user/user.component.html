@@ -1,0 +1,41 @@
+<div class="card mb-3">
+  <div class="card-header">
+    <div class="card-header-left">
+      <div class="name">
+        <h3>
+          <i class="fas fa-user"></i> {{user.userName}}</h3>
+      </div>
+      <div class="id">(id: {{user.id}})</div>
+    </div>
+    <div class="card-right">Created: {{user.createdAt | date}} </div>
+  </div>
+  <div class="card-body">
+    <div class="row userInfo">
+      <div class="col-md-3 userIcon">
+        <img src="{{user.imageUrl}}" />
+      </div>
+      <div class="offset-md-1 col-md-8">
+        <h5 class="card-title">Bio</h5>
+        <p class="card-text">{{user.bio}}
+          <span *ngIf="!user.bio">User has no bio specified.</span>
+        </p>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="infoItem">Public repos: <span>{{user.publicRepos}}</span></div>
+            <div class="infoItem">Public gists: <span>{{user.publicGists}}</span></div>
+            <div class="infoItem">Followers: <span>{{user.followers}}</span></div>
+            <div class="infoItem">Following: <span>{{user.following}}</span></div>
+          </div>
+          <div class="offset-md-3 col-md-4">
+              <div *ngIf="user.name"class="infoItem">Name: <span>{{user.name}}</span></div>
+              <div *ngIf="user.userType" class="infoItem">Type: <span>{{user.userType}}</span></div>
+              <div *ngIf="user.email" class="infoItem">Email: <span>{{user.email}}</span></div>
+              <div *ngIf="user.location" class="infoItem">Location: <span>{{user.location}}</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr/>
+    <app-user-repos [user]="user"></app-user-repos>
+  </div>
+</div>
